@@ -1,0 +1,163 @@
+:root {
+    --while-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --text-disabled-color:#999999;
+    --small-thing-color:#747272;
+    --primary-color:#8262b5;
+    --border-color:#dddddd;
+    --star-gold-color:#ffce3e;
+    --header-height:126px;
+    --navbar-height:80px;
+   
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html { 
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+
+
+/* button style */
+.btn {
+    min-width: 106px;
+    height: 40px;
+    border: none;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    line-height: 40px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 18px;
+    background-color: var(--while-color);
+}
+
+.btn__normal:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--while-color);
+    font-size: 1.4rem;
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    background-color: #999;
+    color: #ccc;
+    
+}
+
+
+
+/* ------Modal MENU---------- */
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+    animation: fadeIn linear 0.3s;
+}
+
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 36%;
+    max-width: 100%;
+    background-color: var(--while-color);
+    /* overflow: hidden; */
+     transform: translateX(100%);
+    transition: transform linear 0.2s;
+    z-index: 2;
+   
+}
+
+.modal.open-menu {
+    display: flex;
+}
+
+.show-menu {
+    transform: translateX(0%);
+}
+
+
+.nav-menu__list {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+}
+
+.nav-menu__item {
+    padding: 15px 30px;
+}
+
+.nav-menu__item:hover {
+   background-color: #8262b5;
+   color: var(--while-color);
+}
+
+.nav-menu__item:hover .nav-menu__item-link{
+    color: var(--while-color);
+ }
+
+
+.nav-menu__item-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-family: "Montserrat";
+    color: var(--black-color);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-menu__item-search {
+    padding-bottom: 20px;
+}
+
+.menu-search__input::placeholder {
+    font-size: 1.4rem;
+    color: #ccc;
+}
